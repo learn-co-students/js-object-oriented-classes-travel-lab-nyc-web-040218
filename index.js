@@ -17,12 +17,11 @@ class Route {
         this.endingLocation = endingLocation;
     }
 
-    getValueOfAvenue(horizontalVal){
+    getValueOfAvenue(horizontalVal) {
         return eastWest[horizontalVal]
     }
-
+    
     blocksTravelled() {
-        let obj = this
         let verticalDistance = Math.abs(this.endingLocation.vertical - this.beginningLocation.vertical)
         let horizontalDistance = Math.abs(this.getValueOfAvenue(this.endingLocation.horizontal) - this.getValueOfAvenue(this.beginningLocation.horizontal))
         return verticalDistance + horizontalDistance
