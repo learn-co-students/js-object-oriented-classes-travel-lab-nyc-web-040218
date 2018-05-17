@@ -1,7 +1,7 @@
 class Driver {
   constructor(name, dateString) {
-    this.name = name
-    this.startDate = new Date(dateString)
+    this.name = name;
+    this.startDate = new Date(dateString);
   }
 
   yearsExperienceFromBeginningOf(year) {
@@ -21,14 +21,14 @@ const eastWest = [
 
 class Route {
   constructor(beginningLocation, endingLocation) {
-    this.beginningLocation = beginningLocation
-    this.endingLocation = endingLocation
+    this.beginningLocation = beginningLocation;
+    this.endingLocation = endingLocation;
   }
 
   blocksTravelled () {
     let blocksVertical = Math.abs(parseInt(this.endingLocation.vertical) - parseInt(this.beginningLocation.vertical));
 
-    let blocksHorizontal = eastWest.indexOf(this.endingLocation.horizontal) - eastWest.indexOf(this.beginningLocation.horizontal);
+    let blocksHorizontal = Math.abs(eastWest.indexOf(this.endingLocation.horizontal) - eastWest.indexOf(this.beginningLocation.horizontal));
 
     return blocksVertical + blocksHorizontal;
   }
@@ -40,5 +40,4 @@ class Route {
       return this.blocksTravelled() / 3;
     }
   }
-
 }
